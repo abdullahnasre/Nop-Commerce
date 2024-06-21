@@ -1,6 +1,6 @@
 # Nop Commerce
 
-![Nop Commerce Logo](https://www.google.com/imgres?q=nopcommerce&imgurl=https%3A%2F%2Fwww.nopcommerce.com%2Fimages%2FnopLogos%2FnopCommerce%2Fnopcommerce_logo.png)
+![Nop Commerce Logo](https://camo.githubusercontent.com/31b15bff3db10ae54b93e3e7aca0c341ad356fe1e234164964fc56a27a1aedcb/68747470733a2f2f7062732e7477696d672e636f6d2f70726f66696c655f696d616765732f313139373433393732303935373132303531372f62424d41527774385f343030783430302e706e67)
 
 ## Table of Contents
 
