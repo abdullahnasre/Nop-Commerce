@@ -13,14 +13,16 @@
 
 ## Introduction
 
-Nop Commerce is a E-Commerce Web application that provides various ecommerce services and features. This repository contains the source code for the Nop Commerce application.
+Nop Commerce is an ecommerce application that provides various ecommerce services and features. This repository contains the source code for the Nop Commerce application.
 
 ## Features
 
-- *Account Management*: Create and manage bank accounts.
-- *Transactions*: Perform transactions such as deposits, withdrawals, and transfers.
-- *Account Statements*: Generate account statements for a specific time period.
-- *Security*: Ensure secure and encrypted transactions.
+* Customer account management:This gives customers the ability to create accounts, store billing and shipping information, and track order history.
+* Shopping cart and checkout: This is where customers can add items to their cart, review their order, and complete the purchase. Make sure the checkout process is simple and streamlined.
+* Secure payment processing:
+* Order tracking and fulfillment
+* Product search and browsing
+
 
 ## Installation
 
