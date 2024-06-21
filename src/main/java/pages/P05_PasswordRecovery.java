@@ -21,6 +21,4 @@ public class P05_PasswordRecovery {
         driver.findElement(recoverButton).click();
         return this;
     }
-
-
 }

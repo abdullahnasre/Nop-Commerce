@@ -10,6 +10,78 @@ public class Utility {
         return firstNames[index];
     }
 
+    public static String generateRandomEmail() {
+        String[] domains = {"gmail.com", "yahoo.com", "hotmail.com"};
+        String firstName = randomString(10); // Generate random alphanumeric string
+        String lastName = randomString(5);  // Generate random alphanumeric string
+        String domain = domains[(int) (Math.random() * domains.length)]; // Pick random domain
+        return firstName + "." + lastName + "@" + domain;
+    }
+
+    private static String randomString(int length) {
+        StringBuilder sb = new StringBuilder();
+        String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        for (int i = 0; i < length; i++) {
+            int index = (int) (Math.random() * characters.length());
+            sb.append(characters.charAt(index));
+        }
+        return sb.toString();
+    }
+    public static String generateComplexPassword() {
+        int minLength = 8;
+        int maxLength = 12; // Increase for stronger passwords
+        int length = (int) (Math.random() * (maxLength - minLength + 1)) + minLength;
+
+        StringBuilder password = new StringBuilder();
+        int remainingChars = length;
+        String lowercase = "abcdefghijklmnopqrstuvwxyz";
+        String uppercase = lowercase.toUpperCase();
+        String digits = "0123456789";
+        String specialChars = "!@#$%^&*()_+-=[]{};':\\|,.<>/?";
+
+        // Ensure at least one character from each category
+        String[] charCategories = {lowercase, uppercase, digits, specialChars};
+        for (String category : charCategories) {
+            password.append(category.charAt((int) (Math.random() * category.length())));
+            remainingChars--;
+        }
+
+        // Fill remaining characters with random characters from all categories
+        while (remainingChars > 0) {
+            String allChars = lowercase + uppercase + digits + specialChars;
+            int index = (int) (Math.random() * allChars.length());
+            password.append(allChars.charAt(index));
+            remainingChars--;
+        }
+
+        // Shuffle characters for better randomness (optional)
+        char[] chars = password.toString().toCharArray();
+        shuffleArray(chars);
+        return new String(chars);
+    }
+
+    private static void shuffleArray(char[] array) {
+        for (int i = array.length - 1; i > 0; i--) {
+            int index = (int) (Math.random() * (i + 1));
+            char temp = array[index];
+            array[index] = array[i];
+            array[i] = temp;
+        }
+    }
+    public static String generateWeekPassword() {
+        StringBuilder password = new StringBuilder();
+        String digits = "0123456789";
+
+        // Generate four random digits
+        for (int i = 0; i < 4; i++) {
+            int index = (int) (Math.random() * digits.length());
+            password.append(digits.charAt(index));
+        }
+
+        return password.toString();
+    }
+
+
     public static int generateRandomIntFrom1To3() {
         Random random = new Random();
         int randomInt = random.nextInt(3);

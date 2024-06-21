@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Add to wishlist , comparelist and complete the whole process till seting the order - on firefox">
+    <parameter name="browser" value="firefox"/>
+
+
+    <test name="add to wishlist">
+        <classes>
+            <class name="testcases.TC08_AddProductToWishlistTest">
+                <methods>
+                    <include name="checkAddTowishlist"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="add to compare list">
+        <classes>
+            <class name="testcases.TC09_CompareTest">
+                <methods>
+                    <include name="checkCompareProducts"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+
+    <test name="checkout - firefox">
+        <classes>
+            <class name="testcases.TC10_CheckoutTest">
+                <methods>
+                    <include name="CheckCheckoutButton"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+
+</suite>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regestration , Login and add to cart">
+    <parameter name="browser" value="firefox"/>
+    <test verbose="2" preserve-order="true" name="Register with valid data - on firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="testcases.TC02_RegisterTest">
+
+                <methods>
+                    <include name="checkRegisterWithValidData_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="login - firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="testcases.TC01_Login">
+                <methods>
+                    <include name="TC02_RegisterTest"/>
+                </methods>
+                <methods>
+                    <include name="checkRegisterWithValidData_P"/>
+                </methods>
+            <methods>
+                <include name="checkLoginWithValidData_P"/>
+            </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="add to cart">
+        <classes>
+            <class name="testcases.TC11_AddToCart">
+                <methods>
+                    <include name="testSelectOption"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+
+</suite>

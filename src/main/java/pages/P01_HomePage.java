@@ -5,22 +5,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
 public class P01_HomePage {
 
     WebDriver driver;
     private final By currencyDropdown = By.id("customerCurrency");
+    private final By EuroCurrency = By.xpath("//*[@id=\"customerCurrency\"]/option[2]");
     private final By apparelLink = By.xpath("//ul[@class='top-menu notmobile']//a[normalize-space()='Apparel']");
     private final By shoesLink = By.xpath("//ul[@class='top-menu notmobile']//a[normalize-space()='Shoes']");
-    public P01_HomePage (WebDriver driver) {
+
+    public P01_HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
 
-    public void selectFromDropDown(String option){
+    public void selectFromDropDown(String option) {
         findDropDownElement().selectByVisibleText(option);
     }
 
-    private Select findDropDownElement(){
+    private Select findDropDownElement() {
         return new Select(driver.findElement(currencyDropdown));
     }
 
@@ -29,7 +32,11 @@ public class P01_HomePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(hoverAction).perform();
         Thread.sleep(2000);
-        return  this;
+        return this;
+    }
+
+    public String getSelectedCurrency() {
+        return findDropDownElement().getFirstSelectedOption().getText();
     }
 
     public P08_FilterPage clickShoesLink() throws InterruptedException {
@@ -37,6 +44,6 @@ public class P01_HomePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(hoverAction).click().perform();
         Thread.sleep(2000);
-        return  new P08_FilterPage(driver);
+        return new P08_FilterPage(driver);
     }
 }

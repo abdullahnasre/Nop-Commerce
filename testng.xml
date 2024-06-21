@@ -1,36 +1,128 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-   <test name="1 Register new user">
-       <classes>
-           <class name="testcases.TC02_RegisterTest">
-               <methods>
-                   <include name="checkRegisterWithValidData_P"/>
-               </methods>
-           </class>
-       </classes>
-   </test>
-    <test name="Login with registered data">
+<suite name="Nop_Commerce">
+    <parameter name="browser" value=""/>
+    <test name="1 Register new user">
         <classes>
-            <class name="testcases.TC01_Login">
-                <methods><include name="checkLoginWithValidData_P"/>
+            <class name="testcases.TC02_RegisterTest">
+                <methods>
+                    <include name="checkRegisterWithValidData_P"/>
                 </methods>
             </class>
         </classes>
     </test>
 
-<!--    <test name="Check Hover random category">-->
-<!--        <classes>-->
-<!--            <class name="testcases.TC01_Login">-->
-<!--                <methods>-->
-<!--                    <include name="checkLoginWithValidData_P"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="testcases.TC06_CategoryTest">-->
-<!--                <methods><include name="checkHoverOnCategory"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
-    
+    <test name="2 Login with registered data">
+        <parameter name="browser" value=""/>
+        <classes>
+            <class name="testcases.TC01_Login">
+                <methods>
+                    <include name="checkLoginWithValidData_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="3 Check forget password">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="testcases.TC03_ForgetPassword">
+                <methods>
+                    <include name="checkForgetPassword_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Check search functionality">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="testcases.TC04_Search">
+                <methods>
+                    <include name="checkSearchFunction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Check change currency functionality">
+        <parameter name="browser" value="chrome"/>
+
+        <classes>
+            <class name="testcases.TC05_ChangeCurrency">
+                <methods>
+                    <include name="checkTestSelectOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Check Hover functionality">
+        <parameter name="browser" value=""/>
+
+        <classes>
+            <class name="testcases.TC06_CategoryTest">
+                <methods>
+                    <include name="checkHoverOnCategory"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Check Filter functionality">
+        <parameter name="browser" value="edge"/>
+
+        <classes>
+            <class name="testcases.TC07_FilterTest">
+                <methods>
+                    <include name="checkFilterBox"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CheckAddProductToWishlist">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="testcases.TC08_AddProductToWishlistTest">
+                <methods>
+                    <include name="checkAddTowishlist"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="CheckCompare">
+        <parameter name="browser" value=""/>
+        <classes>
+            <class name="testcases.TC09_CompareTest">
+                <methods>
+                    <include name="checkCompareProducts"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkout">
+        <parameter name="browser" value=""/>
+        <classes>
+            <class name="testcases.TC10_CheckoutTest">
+                <methods>
+                    <include name="CheckCheckoutButton"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddToCart">
+        <parameter name="browser" value=""/>
+        <classes>
+            <class name="testcases.TC11_AddToCart">
+                <methods>
+                    <include name="testSelectOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>

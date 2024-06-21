@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Search product , change currency and reset the password - on edge">
+    <parameter name="browser" value="edge"/>
+
+    <test name="search">
+        <classes>
+            <class name="testcases.TC04_Search">
+                <methods>
+                    <include name="TC04_Search"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="change currancy">
+        <classes>
+            <class name="testcases.TC05_ChangeCurrency">
+                <methods>
+                    <include name="TC05_ChangeCurrency"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="reset password">
+        <classes>
+            <class name="testcases.TC03_ForgetPassword">
+                <methods>
+                    <include name="TC03_ForgetPassword"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

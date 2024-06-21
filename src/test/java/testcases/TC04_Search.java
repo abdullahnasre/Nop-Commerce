@@ -1,25 +1,29 @@
 package testcases;
 
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.P02_Login;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.P06_SearchPage;
+
+import java.util.List;
 
 
 public class TC04_Search extends TestBase {
     String searchInput = "Apple MacBook Pro 13-inch";
-    String searchInput2 = "Asus N551JK-XO076H Laptop";
-
-    String password = "P@ssword";
-    String email = "samo@samo.com";
+    //String searchInput2 = "Asus N551JK-XO076H Laptop";
 
     @Test
     public void checkSearchFunction() throws InterruptedException {
-        //String generatedEmail = generateRandomEmail();  // Call the method
-        //P02_Login login = new P02_Login(driver);
         P06_SearchPage searchPage = new P06_SearchPage(driver);
-        searchPage.clickLoginTap().setEmail(email).setPassword(password).clickLoginButtonWithScroll();
-        Thread.sleep(Long.parseLong("3000"));
+        Thread.sleep(2000);
         searchPage.setSearchInput(searchInput).pressSearchButton();
-        searchPage.setSearchInput(searchInput2).pressSearchButton();
+        //searchPage.setSearchInput(searchInput2).pressSearchButton();
+
+
+        // Assert that search results contain the expected product
+        List<WebElement> productTitles = searchPage.getProductTitles();
+        boolean isProductFound = productTitles.stream().anyMatch(title -> title.getText().contains(searchInput));
+        Assert.assertTrue(isProductFound, "Expected product not found in the search results for: " + searchInput);
     }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regestration , Login and add to cart">
+    <parameter name="browser" value=""/>
+
+    <test name="1 Register new user">
+        <classes>
+            <class name="testcases.TC02_RegisterTest">
+                <methods>
+                    <include name="checkRegisterWithValidData_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login with registered data">
+        <classes>
+            <class name="testcases.TC01_Login">
+                <methods>
+                    <include name="checkRegisterWithValidData_P"/>
+                </methods>
+                <methods>
+                    <include name="checkLoginWithValidData_P"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="add to cart">
+        <classes>
+            <class name="testcases.TC11_AddToCart">
+                <methods>
+                    <include name="testSelectOption"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -13,12 +13,11 @@ public class TC09_CompareTest extends TestBase {
     public void checkCompareProducts() throws InterruptedException {
         P06_SearchPage searchPage = new P06_SearchPage(driver);
         P10_ComparePage comparePage = new P10_ComparePage(driver);
-        Thread.sleep(Long.parseLong("3000"));
+        Thread.sleep(Long.parseLong("2000"));
         searchPage.setSearchInput(searchInput).pressSearchButton().clickAddCompareButton();
         searchPage.setSearchInput(searchInput2).pressSearchButton().clickAddCompareButton();
         comparePage.clickProductCompareLink();
-        Thread.sleep(Long.parseLong("3000"));
+        Thread.sleep(Long.parseLong("2000"));
         comparePage.clearList();
-        Thread.sleep(Long.parseLong("3000"));
     }
 }

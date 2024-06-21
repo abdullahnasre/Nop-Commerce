@@ -4,13 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class P03_Registeration {
-
     WebDriver driver;
-
-
-    // TODO constructor
-    // TODO locators
-    // TODO action methods
 
     public P03_Registeration(WebDriver driver) {
         this.driver = driver;
@@ -25,6 +19,8 @@ public class P03_Registeration {
     private final By PasswordField = By.xpath("//input[@id='Password']");
     private final By ConfirmPassword = By.xpath("//input[@id='ConfirmPassword']");
     private final By RegisterButton = By.xpath("//button[@id='register-button']");
+    private final By logout = By.xpath("//a[@class='ico-logout']");
+    private final By successText = By.xpath("//div[@class='result']");
 
     public P03_Registeration clickRegisterTap() {
         driver.findElement(RegisterLink).click();
@@ -64,5 +60,14 @@ public class P03_Registeration {
     public P03_Registeration clickRegisterButton() {
         driver.findElement(RegisterButton).click();
         return this;
+    }
+
+    public P03_Registeration clicklogout() {
+        driver.findElement(logout).click();
+        return this;
+    }
+
+    public boolean verifySuccessmessage(String Successmsg) {
+        return driver.findElement(successText).getText().contains(Successmsg);
     }
 }
